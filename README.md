@@ -1,0 +1,1 @@
+Training project by Aliaksei Romaniuk, 18:15 15.05.2025
