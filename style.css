@@ -9,6 +9,8 @@
   --size-border: 0.0625rem;
   --elements-font-size: 1.125rem;
   --elements-line-height: 1.875rem;
+
+  --emoji-bgcolor: #418CFE;
 }
 
 html {
@@ -127,6 +129,31 @@ td:first-child {
 
 tr:last-child td {
   border-bottom: var(--size-border) solid var(--table-brdcolor);
+}
+
+.emoji-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2.9688rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.emoji {
+  width: 3rem;
+  height: 3rem;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.emoji-container img.clicked {
+  position: relative;
+  border-radius: 50%;
+  background-color: var(--emoji-bgcolor);
+  transform: scale(0.9);
+  padding: 0.8rem;
 }
 
 @media screen and (max-width: 1080px) {
