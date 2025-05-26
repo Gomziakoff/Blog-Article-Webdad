@@ -8,6 +8,7 @@
   --emoji-bgcolor: #418cfe;
   --actual-info-bgcolor: #ffffff;
   --header-bgcolor: #ffffff;
+  --footer-bgcolor: #202328;
   --title-bgcolor: #eaf4ff;
   --table-brdcolor: #cbcbcb;
 
@@ -21,6 +22,11 @@ html {
   font-family: "Rubik", sans-serif;
   color: var(--text-color);
 }
+
+html, body {
+  overflow-x: hidden;
+}
+
 
 h1,
 h2,
@@ -86,6 +92,7 @@ header {
   font-weight: 400;
   line-height: 1.5rem;
   color: var(--head-color);
+  text-decoration: none;
 }
 
 header button {
@@ -366,15 +373,230 @@ input::placeholder {
   display: inline-block;
 }
 
-@media screen and (max-width: 1080px) {
-  .image_block img {
-    width: calc(100% - 3rem);
-    height: fit-content;
-  }
+/*footer*/
 
-  .image_block {
-    width: 100%;
-  }
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--footer-bgcolor);
+}
+
+.footer_grid {
+  display: grid;
+  justify-content: space-between;
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+  padding-left: 12.95rem;
+  padding-right: 12.95rem;
+  max-width: 64rem;
+  width: 100%;
+  margin: 0 auto;
+  gap: 1rem;
+  grid-template-columns: repeat(3, max-content);
+  color: var(--actual-info-bgcolor);
+  grid-template-areas:
+    "logo contacts social_media"
+    "menu mail legal_info"
+    "menu address legal_navigation"
+    "down_line down_line down_line"
+    "copyright copyright copyright"
+    ;
+}
+
+.logo { grid-area: logo; }
+.menu { grid-area: menu; }
+.contacts { grid-area: contacts; }
+.mail { grid-area: mail; }
+.address { grid-area: address; }
+.social_media { grid-area: social_media; }
+.legal_info { grid-area: legal_info; }
+.legal_navigation { grid-area:legal_navigation; }
+.copyright { grid-area: copyright; }
+.down_line { grid-area: down_line; }
+
+.footer_block {
+  display: flex;            
+  justify-content: flex-start; 
+  justify-items: start;
+  align-items: center;   
+}
+
+.footer_block .logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.footer_block.menu {
+  width: 14.375rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.footer_block.menu ul {
+  padding-left: 0;
+  margin-left: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 1rem;
+  max-width: none;
+  min-width: 0;
+}
+
+.footer_block.menu li a {
+  display: inline-flex;
+  align-items: center; 
+  gap: 8px;
+}
+
+.footer_block.menu a {
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.625rem;
+  text-decoration: none;
+}
+
+.footer_block.contacts {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center; 
+  gap: 1rem; 
+  width: 19.5rem;
+}
+
+.social_network a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.5rem; 
+}
+
+.white_line {
+  width: 1px; 
+  background-color: var(--actual-info-bgcolor);
+  align-self: stretch; 
+}
+
+.telephone a {
+  color: var(--actual-info-bgcolor); /* или нужный цвет */
+  text-decoration: none;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.625rem;
+}
+
+.footer_block.social_media {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center; 
+  gap: 1rem; 
+  width: 10.44rem;
+}
+
+.footer_block.mail {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start; 
+  gap: 0.5rem; 
+}
+
+.footer_block.mail a {
+  color: var(--actual-info-bgcolor);
+  text-decoration: none;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.625rem;
+}
+
+.footer_block.legal_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start; 
+  gap: 0.5rem; 
+}
+
+.footer_block.legal_info p {
+  color: var(--actual-info-bgcolor);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.375rem;
+}
+
+.footer_block.legal_navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start; 
+  gap: 0.5rem; 
+}
+
+.footer_block.legal_navigation nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer_block.legal_navigation a {
+  color: var(--actual-info-bgcolor);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.375rem;
+} 
+
+.footer_block.address {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start; 
+  gap: 0.5rem; 
+}
+
+.footer_block.address p {
+  color: var(--actual-info-bgcolor);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5rem;
+}
+
+.footer_block.down_line hr{
+  all: unset; 
+  height: 1px;
+  background-color: #ccc;
+  width: 100%;
+  margin-top: 5.5rem;
+  display: block;
+}
+
+.footer_block.copyright {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  align-items: center;
+  width: 100%;
+}
+
+.footer_block.copyright p {
+  color: var(--actual-info-bgcolor);
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1rem;
+}
+
+.footer_block.copyright br {
+  display: none;
 }
 
 @media screen and (max-width: 768px) {
@@ -519,8 +741,78 @@ input::placeholder {
     gap: unset;
     padding: 0 1.5rem;
   }
+
+  /* footer */
+  .footer_grid {
+    padding-left: 2.9rem;
+    padding-right: 2.9rem;
+    grid-template-columns: repeat(2, max-content);
+    grid-template-areas:
+      "logo contacts"
+      "menu mail"
+      "menu address"
+      "social_media ."
+      ". legal_info"
+      ". legal_navigation"
+      "down_line down_line"
+      "copyright copyright";
+    gap:1rem;
+  }
+  
+  .footer_block.menu {
+    width: 14.375rem;
+    display: block;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .footer_block.menu ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem 1rem;     
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer_block.down_line hr{
+    margin-top: 2rem;
+  }
 }
 
+@media screen and (max-width: 700px) {
+  .footer_grid {
+    grid-template-columns: repeat(1, max-content);
+    justify-content: center;
+    gap:1rem;
+    grid-template-areas:
+      "logo"
+      "menu"
+      "contacts"
+      "mail"
+      "address"
+      "social_media"
+      "legal_info"
+      "legal_navigation"
+      "down_line"
+      "copyright";
+  } 
+  .footer_block.copyright {
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer_block.copyright p {
+    text-align: center;
+  }
+  .footer_block.copyright br {
+    display: block;
+  }
+  .footer_block.down_line hr{
+    margin-top: 1.5rem;
+  }
+}
 @media screen and (max-width: 544px) {
 .header_inner {
     padding: 0.75rem 1rem;
@@ -567,6 +859,29 @@ input::placeholder {
     flex-direction: column;
     width: 100%;
     max-width: 14.5625rem;
+  }
+
+  /* footer */
+  .footer_grid {
+    grid-template-columns: repeat(1, max-content);
+    justify-content: center;
+    grid-template-areas:
+      "logo"
+      "menu"
+      "contacts"
+      "mail"
+      "address"
+      "social_media"
+      "legal_info"
+      "legal_navigation"
+      "down_line"
+      "copyright";
+  } 
+
+  .footer_block.copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -646,4 +961,44 @@ input::placeholder {
     width: 100%;
     max-width: 14.5625rem;
   }
+
+  /* footer */
+
+  .footer_grid {
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    grid-template-areas:
+      "logo"
+      "menu"
+      "contacts"
+      "mail"
+      "address"
+      "social_media"
+      "legal_info"
+      "legal_navigation"
+      "down_line"
+      "copyright";
+  }
+
+  .footer_block.contacts {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .footer_block.contacts .white_line {
+    display: none;
+  }
+
+  .footer_block.copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer_block.copyright p {
+    text-align: center;
+  }
+
+
 }
