@@ -129,6 +129,11 @@ h3 {
   line-height: 2rem;
 }
 
+picture {
+  display: contents;
+}
+
+
 .image_block {
   margin-bottom: 1.5rem;
   margin-top: 3rem;
@@ -138,6 +143,7 @@ h3 {
   justify-content: center;
 }
 
+.image_block picture,
 .image_block img {
   width: 64rem;
   height: 40.375rem;
@@ -639,7 +645,10 @@ input::placeholder {
   h1 {
     font-size: 1.6rem;
   }
+
+  .image_block picture,
   .image_block img {
+    margin: 0 auto;
     width: calc(100% - 3rem);
     height: fit-content;
   }
